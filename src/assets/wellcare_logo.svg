@@ -1,0 +1,17 @@
+
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect width="100%" height="100%" fill="#F4F4F4"/>
+  <g transform="translate(100, 40)">
+    <!-- Logo Icon -->
+    <circle cx="100" cy="0" r="12" fill="#3CB4AC"/>
+    <path d="M100 15 L65 75 Q100 60 135 75 Z" fill="#144D75"/>
+    <path d="M65 75 L90 30 L100 45 Z" fill="#0077B6"/>
+    <path d="M135 75 L110 30 L100 45 Z" fill="#48CAE4"/>
+    
+    <!-- Main Text -->
+    <text x="0" y="130" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#002855">WELLCARE</text>
+    
+    <!-- Subtitle -->
+    <text x="10" y="165" font-family="Arial, sans-serif" font-size="16" fill="#002855">DOCTOR BOOKING WEBSITE</text>
+  </g>
+</svg>
