@@ -18,7 +18,7 @@ const Header = () => {
         </div>
         <a
           href="#speciality"
-          className='bg-white text-blue-500 font-semibold px-5 py-2 rounded-lg flex items-center gap-2 hover:bg-red-600 hover:text-white transition duration-300'
+          className='bg-white text-blue-500 font-semibold px-5 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-600 hover:text-white transition duration-300'
         >
           Book Appointment
           <img className='w-4' src={assets.arrow_icon} alt="Arrow" />
