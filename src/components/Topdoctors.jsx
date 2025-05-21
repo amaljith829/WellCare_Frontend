@@ -5,14 +5,14 @@ import { AppContext } from '../context/AppContext'
 const Topdoctors = () => {
 
     const navigate=useNavigate()
-    const {doctors} = useContext(AppContext)
+    const [doctors] = useContext(AppContext)
 
     return (
         <div className='flex flex-col items-center gap-6 my-16 text-gray-900 md:mx-10'>
             <h1 className='text-3xl font-semibold'>Top Doctors to Book</h1>
             <p className='sm:w-1/3 text-center text-sm'>Book an appointment with the best doctors in your area</p>
             <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 pt-5'>
-                {doctors.slice(0, 10).map((item, index) => (
+                {doctors.slice(0, 10).map((item,index) => (
                     <div
                         onClick={() => navigate(`/appointment/${item._id}`)}
                         className='bg-white border border-blue-100 rounded-xl overflow-hidden cursor-pointer shadow hover:shadow-lg hover:-translate-y-2 transition-all duration-300 flex flex-col items-center'
