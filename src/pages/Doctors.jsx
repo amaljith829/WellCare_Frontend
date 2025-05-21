@@ -16,7 +16,7 @@ const Doctors = () => {
           <p>Dermatologist</p>
           <p>Pediatrician</p>
           <p>Neurologist</p>
-          <p>ENT</p>
+          <p>Gastroenterologist</p>
         </div>
         <div>
 {
