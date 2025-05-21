@@ -9,8 +9,8 @@ const Topdoctors = () => {
 
     return (
         <div className='flex flex-col items-center gap-6 my-16 text-gray-900 md:mx-10'>
-            <h1 className='text-3xl font-semibold'>Top Doctors to Book</h1>
-            <p className='sm:w-1/3 text-center text-sm'>Book an appointment with the best doctors in your area</p>
+            <h1 className='text-3xl font-semibold'>Top Doctors to Book </h1>
+            <p className='sm:w-1/3 text-center text-sm'>Book an appointment with the best doctors in your area </p>
             <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 pt-5'>
                 {doctors.slice(0, 10).map((item,index) => (
                     <div
