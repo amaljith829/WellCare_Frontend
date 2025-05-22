@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
@@ -64,34 +64,29 @@ const Appointment = () => {
     getavailableSlots()
   }, [docInfo])
 
-  useEffect(() => {
-    console.log(docSlots)
-  }, [docSlots]);
-
-
-
   return docInfo && (
-    <div className="flex justify-center items-center min-h-[60vh] py-8">
-      <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-3xl">
+    <div className="flex flex-col items-center min-h-[60vh] py-8">
+      {/* Doctor Profile */}
+      <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-3xl mb-6" style={{ minHeight: '210px', height: 'auto' }}>
         {/* Left: Doctor Image */}
-        <div className="bg-blue-500 flex justify-center items-center p-8 md:w-1/3">
+        <div className="bg-blue-500 flex justify-center items-center p-6 md:w-1/3">
           <img
             src={docInfo.image}
             alt={docInfo.name}
-            className="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg"
+            className="w-36 h-36 object-cover rounded-full border-4 border-white shadow-lg"
           />
         </div>
         {/* Right: Doctor Info */}
-        <div className="flex-1 p-6 flex flex-col justify-center">
+        <div className="flex-1 p-4 flex flex-col justify-center">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-2xl md:text-3xl font-bold text-gray-800">{docInfo.name}</span>
             <img src={assets.verified_icon} alt="Verified" className="w-6 h-6" />
           </div>
-          <div className="mb-2">
+          <div className="mb-2 flex items-center gap-3 flex-wrap">
             <p className="text-base md:text-lg font-medium text-blue-600">{docInfo.degree} - {docInfo.speciality}</p>
-            <p className="text-sm text-gray-500">{docInfo.experience}</p>
+            <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full ml-1">{docInfo.experience}</span>
           </div>
-          <div className="mb-3">
+          <div className="mb-2">
             <div className="flex items-center gap-1 mb-1">
               <span className="font-semibold text-gray-700">About</span>
               <img src={assets.info_icon} alt="Info" className="w-4 h-4" />
@@ -104,30 +99,47 @@ const Appointment = () => {
         </div>
       </div>
 
-      {/*......booking slots......*/}
-      <div className='sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700'>
-        <p>Booking slots</p>
-        <div className='flex gap-3 items-center w-full overflow-x-scroll mt-4'>
-          {
-            docSlots.length && docSlots.map((item,index) =>(
-              <div onClick={() => setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-200'}`} key={index}>
-                <p>{item[0] && daysofweek[item[0].datatime.getDay()]}</p>
+      {/* Booking Slots Section - now under the profile */}
+      <div className='w-full max-w-lg mx-auto'>
+        <div className="bg-white rounded-xl shadow p-4">
+          <p className="text-base font-semibold mb-4 text-blue-600">Booking Slots</p>
+          <div className='flex gap-2 items-center w-full overflow-x-auto mb-4 hide-scrollbar'>
+            {docSlots.length && docSlots.map((item, index) => (
+              <div
+                onClick={() => setSlotIndex(index)}
+                className={`text-center py-2 px-2 min-w-12 rounded-lg cursor-pointer text-xs transition-all duration-200 ${
+                  slotIndex === index
+                    ? 'bg-blue-500 text-white shadow'
+                    : 'border border-gray-200 bg-gray-50 text-gray-600 hover:bg-blue-100'
+                }`}
+                key={index}
+              >
+                <p className="font-bold">{item[0] && daysofweek[item[0].datatime.getDay()]}</p>
                 <p>{item[0] && item[0].datatime.getDate()}</p>
               </div>
-            ))
-          }
+            ))}
+          </div>
+          <div className='flex items-center gap-3 w-full overflow-x-auto pb-1 hide-scrollbar'>
+            {docSlots.length && docSlots[slotIndex].map((item, index) => (
+              <p
+                onClick={() => setSlotTime(item.time)}
+                className={`text-xs font-medium flex-shrink-0 px-5 py-2 rounded-full cursor-pointer transition-all duration-200 ${
+                  item.time === slotTime
+                    ? 'bg-blue-500 text-white shadow'
+                    : 'text-gray-500 border border-gray-300 bg-gray-50 hover:bg-blue-100'
+                }`}
+                key={index}
+                style={{ minWidth: '70px', textAlign: 'center' }}
+              >
+                {item.time.toLowerCase()}
+              </p>
+            ))}
+          </div>
+          <button className='bg-blue-500 text-white text-sm font-semibold px-6 py-2 rounded-full mt-6 shadow hover:bg-blue-600 transition'>
+            Book an appointment
+          </button>
         </div>
-        <div className='flex items-center gap-3 w-full overflow-x-scroll mt-4'>
-          {docSlots.length && docSlots[slotIndex].map((item, index) => (
-            <p onClick={()=> setSlotTime(item.time)} className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime ? 'bg-primary text-white' : 'text-gray-400 border border-gray-300'}`} key={index}>
-              {item.time.toLowerCase()}
-            </p>
-          ))}
-        </div>
-        <button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6'>Book an appointment</button>
-
       </div>
-
     </div>
   )
 }
