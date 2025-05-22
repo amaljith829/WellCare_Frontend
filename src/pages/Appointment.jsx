@@ -21,17 +21,19 @@ const Appointment = () => {
 
   const getavailableSlots = async () => {
     setDocSlots([])
+
     //getting current date
     let today = new Date()
     for (let i = 0; i < 7; i++) {
       //getting current date with index
       let currentDate = new Date(today)
-      currentDate.setDate(today.getDate() + i)
+      currentDate.setDate(today.getDate()+i)
 
       // setting end time of the date with index
       let endTime = new Date()
       endTime.setDate(today.getDate() + i)
       endTime.setHours(21, 0, 0, 0)
+
       //setting hours
       if (today.getDate() === currentDate.getDate()) {
         currentDate.setHours(currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10)
@@ -47,8 +49,9 @@ const Appointment = () => {
         //add slot to the array
         TimeSlots.push({
           datatime: new Date(currentDate),
-          time: formattedTime,
+          time: formattedTime
         })
+        
         //increment current time by 30 minutes
         currentDate.setMinutes(currentDate.getMinutes() + 30)
       }
