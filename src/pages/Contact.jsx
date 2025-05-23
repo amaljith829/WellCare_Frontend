@@ -14,7 +14,7 @@ const Contact = () => {
   <p className='font-semibold text-lg text-gray-700'>OUR OFFICE</p>
   <p className='text-gray-600'>54709 Willms Station <br /> Suite 350, India, KERALA</p>
   <p className='text-gray-600'>Tel: (415) 555-0132 <br /> Email: wellcare@gmail.com</p> 
-  <p className='font-semibold text-lg text-gray-700'>careers at PRESCRIPTO</p>
+  <p className='font-semibold text-lg text-gray-700'>CAREER AT PRESCRIPTO</p>
   <p className='text-gray-600'>Lern more about our teams and job openings.</p>
   <button className='border border-black px-8 py-4 text-sm hover:bg-black  hover:text-white transition-all duration-500'>Explore jobs</button>
 </div>
