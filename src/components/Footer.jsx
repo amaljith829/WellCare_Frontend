@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='md:mx-10'>
@@ -15,10 +16,31 @@ const Footer = () => {
         <div>
           <p className='text-xl font-medium mb-5'>COMPANY</p>
           <ul className='flex flex-col gap-2 text-gray-600'>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact us</li>
-          <li>Privacy policy</li>
+           <NavLink
+                              to='/'
+                              className={({ isActive }) => isActive ? 'underline text-blue-500' : ''}
+                          >
+                              <li className='py-1'>HOME</li>
+                          </NavLink>
+                          
+                          <NavLink
+                              to='/about'
+                              className={({ isActive }) => isActive ? 'underline text-blue-500' : ''}
+                          >
+                              <li className='py-1'>ABOUT</li>
+                          </NavLink>
+                          <NavLink
+                              to='/contact'
+                              className={({ isActive }) => isActive ? 'underline text-blue-500' : ''}
+                          >
+                              <li className='py-1'>CONTACT</li>
+                          </NavLink>
+                          <NavLink
+                              to='/doctors'
+                              className={({ isActive }) => isActive ? 'underline text-blue-500' : ''}
+                          >
+                              <li className='py-1'>PRIVACY POLICY</li>
+                          </NavLink>
           </ul>
         </div>
         {/*right section*/}

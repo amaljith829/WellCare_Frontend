@@ -3,8 +3,8 @@ import {assets} from '../assets/assets'
 const About = () => {
   return (
     <div className='px-6 py-10'>
-      <div className='text-center text-2xl font-semibold text-gray-700 mb-10 tracking-wide'>
-        <p>ABOUT<span className='text-black font-medium'>US</span> </p>
+      <div className='text-center text-2xl font-semibold text-gray-700 mb-15 tracking-wide'>
+        <p>ABOUT<span className='text-black font-medium'> US</span> </p>
       </div>
       <div className='flex flex-col md:flex-row items-start gap-10 max-w-6xl mx-auto'>
         <div className='md:w-1/2 w-full flex justify-center md:justify-start order-2 md:order-1'>
@@ -23,8 +23,8 @@ const About = () => {
 
         </div>
       </div>
-      <div className='text-xl my-4'>
-        <p>WHY <span className='text-gray-700 font-semibold'>CHOOSE US</span> </p>
+      <div className='text-xl my-10 mt-16'>
+        <p>WHY <span className='text-gray-700 font-semibold'>CHOOSE US:</span> </p>
       </div>
 
       <div className='flex flex-col md:flex-row mb-20'>
