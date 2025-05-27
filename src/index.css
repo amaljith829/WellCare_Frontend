@@ -1,2 +1,7 @@
 @import "tailwindcss";
-
+@media (max-width:740px){
+    .active p{
+        color: white;
+        background-color: #7c3aed; /* Equivalent to bg-violet-500 */
+    }
+}

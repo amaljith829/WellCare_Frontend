@@ -1,5 +1,5 @@
 import React from 'react'
-import { assets } from '../assets/assets'
+import {assets} from '../assets/assets'
 const About = () => {
   return (
     <div className='px-6 py-10'>
@@ -8,7 +8,7 @@ const About = () => {
       </div>
       <div className='flex flex-col md:flex-row items-start gap-10 max-w-6xl mx-auto'>
         <div className='md:w-1/2 w-full flex justify-center md:justify-start order-2 md:order-1'>
-          <img src={assets.about_image} alt="About Us" className='w-full md:w-[400px] h-auto object-cover rounded-lg shadow-lg' />
+          <img src={assets.about_image} alt="About Us" className='w-full max-w-xs md:w-[400px] h-auto object-cover rounded-lg shadow-lg' />
         </div>
         <div className='md:w-1/2 w-full text-gray-700 space-y-6 text-sm leading-relaxed md:text-left text-center order-1 md:order-2'>
 
